@@ -4,3 +4,4 @@ node_modules
 npm-debug.log
 !/Practice
 .vs/
+package-lock.json
