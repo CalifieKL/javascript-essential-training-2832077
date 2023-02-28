@@ -36,13 +36,14 @@ const computerMine = {
     measure: 4,
     unit: "year",
   },
-  powerOn: "off",
+  powerOn: false,
   switchOnOff: function () {
-    if (this.powerOn == "off") this.powerOn == "on";
-    else this.powerOn = "off";
+    this.powerOn = !this.powerOn;
+    this.alertStatus();
+    console.log(this.powerOn);
   },
   alertStatus: function () {
-    return alert("It is " + this.powerOn + "!");
+    return alert("It is " + (this.powerOn ? "on" : "off") + "!");
   },
   getSizeString: function () {
     return getDescription(this.size.measure, this.size.unit);
@@ -75,7 +76,7 @@ const markup = (computer) => {
       <p>${computer.getDescription()}</p>
     </div>
     <div>
-      <button onclick="alert('it is ${computer.powerOn.toString()}!')">check status</button>
+      <button onclick="alert('Hello world!')">Feeling curious?</button>
     </div>
     `;
 };
